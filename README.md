@@ -44,14 +44,34 @@ Clearing the browser's website data deletes your progress, so export first if yo
 
 ## Contents
 
-| Chapter | Level | Status |
+All eight chapters are playable, from late August to early October.
+
+| Chapter | Level | Grammar focus |
 |---|---|---|
-| 1. Et nytt nummer | A2-1 | Playable |
-| 2–8 | A2-1 to B1-3 | Outlined (plan, grammar focus and hook visible under «Kapitler») |
+| 1. Et nytt nummer | A2-1 | Verb in second place (V2), «ikke» after the verb, modals, questions, en/ei/et |
+| 2. Visning | A2-1 | «Jeg lurer på om …», adjective agreement, comparatives, «fordi» + subordinate clause, polite email |
+| 3. Feber | A2-2 | Past tense vs. perfect, reflexive verbs, «fordi»/«at» clauses, saying no politely |
+| 4. Tilvenning | A2-2 | min/mitt/mine vs. sin/sitt/sine, time expressions (på, om, i), future, «Hvis …, må du …» |
+| 5. Flyttedag | A2-3 | Subordinate clauses, «som»-clauses, adverb placement, forms and official texts |
+| 6. Første arbeidsdag | B1-1 | Passive, reported speech, writing style as a clue, polite suggestions at work |
+| 7. Klagen | B1-2 | Connectors (derfor, likevel, dessuten), pluperfect, formal style, long indirect questions |
+| 8. Riktig nummer | B1-3 | Conditionals («Hvis jeg var deg, ville jeg …»), advice with bør/burde/synes, dialect to Bokmål |
+
+Your choices change what people know and how much they trust you, and the story has **four endings**. «Kapitler» lets you replay any chapter from its start.
+
+## How your Norwegian is checked
+
+Everything runs offline in the page. The checker reads each sentence clause by clause, so it knows the difference between a main clause and a subordinate clause and doesn't mark correct Norwegian as wrong:
+
+- **Main clauses:** verb in second place, also after a fronted word, phrase or whole clause («I morgen *ringer* jeg», «Hvis du kommer, *blir* hun glad»); «ikke» and other sentence adverbs after the verb («Jeg *kommer ikke*»).
+- **Subordinate clauses** after «at», «fordi», «om», «hvis», «når», «som», question words and reported speech: no inversion, and «ikke» *before* the verb («…fordi hun *ikke svarer*», «Jeg lurer på hvor hun *er*»).
+- Also: modal + infinitive, passive with -s, reflexive «seg/sin», adjective agreement (gender, plural, definite), double definiteness, comparatives, and dialect words left in a Bokmål answer.
+
+If an answer is understandable but the checker can't confirm it, you see «Usikker» and can still send it («Send likevel»).
 
 ## For editing
 
-All story content sits in one clearly marked **DATA SECTION** at the top of the `<script>` in `index.html`. A comment at the start of that section documents the format: chapters, days, messages, emails, calendar entries, tasks with accepted answers, checklists and hints, decisions and conditions, the quiz, and the glossary. The engine below the line `END OF DATA SECTION` doesn't need changes to add a chapter: replace a chapter's outline with its full data and set `status: "ready"`.
+All story content sits in one clearly marked **DATA SECTION** at the top of the `<script>` in `index.html`. A comment at the start of that section documents the format: chapters, days, messages, emails, calendar entries, tasks with accepted answers, checklists and hints, decisions and conditions, the quiz, and the glossary. The engine below the line `END OF DATA SECTION` doesn't need changes to edit or add story content.
 
 Every Norwegian word shown in the game needs a glossary entry. Dialect and slang entries include their Bokmål form.
 
