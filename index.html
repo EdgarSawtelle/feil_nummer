@@ -5904,7 +5904,7 @@ function vThreads(kind, appId, title){
 function lastKey(k){ const t = ST().threads[k], m = t.msgs[t.msgs.length - 1]; return m ? parseDate(m.date).getTime() + tmin(m.time) * 60000 : 0; }
 function vThread(th){
   LINES = [];
-  if(!ST().threads[th] || !ST().threads[th].msgs.length){ V = { scr: "phone", app: "home" }; return vHome(); }
+  if(!CONTACTS[th]){ V = { scr: "phone", app: "home" }; return vHome(); }
   const st = ST(), t = thread(th), c = CONTACTS[th] || {};
   const firstNew = t.unread ? t.msgs.length - t.unread : -1, firstNewId = firstNew >= 0 && t.msgs[firstNew] ? t.msgs[firstNew].id : null;
   if(firstNew >= 0 && firstNew < t.msgs.length && t.msgs[firstNew]){ const nd = t.msgs[firstNew].date; if(!EXPANDED[th]){ const lastDate = t.msgs[t.msgs.length - 1].date; if(nd !== lastDate) EXPANDED[th] = true; } }
@@ -5936,7 +5936,8 @@ function bubble(m, th, showTime){
 /* ---------- email ---------- */
 function vMailThread(th){
   LINES = [];
-  if(!ST().threads[th] || !ST().threads[th].msgs.length){ V = { scr: "phone", app: "home" }; return vHome(); }
+  /* an empty mail thread is normal: it is where the player writes the FIRST email (e.g. to Terje) */
+  if(!CONTACTS[th] || (CONTACTS[th].kind !== "mail" && pendingTh() !== "mail:" + th)){ V = { scr: "phone", app: "home" }; return vHome(); }
   const t = thread(th), c = CONTACTS[th] || {};
   t.unread = 0; markRead(n => n.th === th);
   let h = "";
